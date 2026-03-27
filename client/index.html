@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Parsing System using NLP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand">Resume Parsing System using NLP</div>
+        <nav class="nav-links">
+          <a class="nav-link active" href="/">Home</a>
+          <a class="nav-link" href="/upload">Upload Resume</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page container">
+      <section class="hero">
+        <h1>Smart Resume Parsing with Hybrid NLP + Rule-Based Extraction</h1>
+        <p>
+          Upload a resume and instantly extract structured fields such as name, email, phone, skills,
+          education, experience, projects, and certifications. The system follows the modular flow:
+          <strong>extract → clean → parse → store → display</strong>.
+        </p>
+        <div class="btn-row">
+          <a class="btn" href="/upload">Upload Resume</a>
+        </div>
+      </section>
+
+      <section class="grid grid-3" style="margin-top: 18px">
+        <article class="card">
+          <h3><i class='bx bx-user'></i> User Features</h3>
+          <ul class="feature-list">
+            <li>Upload one resume without login</li>
+            <li>Supports PDF, DOCX, and DOC with fallback handling</li>
+            <li>View parsed structured results</li>
+            <li>Download parsed JSON output</li>
+            <li>Readable error/status feedback</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3><i class='bx bx-shield-quarter'></i> Admin Features</h3>
+          <ul class="feature-list">
+            <li>Session-based secure admin login</li>
+            <li>View all uploaded resumes and details</li>
+            <li>Search, filter, sort, export, and delete records</li>
+            <li>Manual edits with updated timestamp and actor</li>
+            <li>Duplicate detection via email/phone matching</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3><i class='bx bx-analyse'></i> Pipeline Alignment</h3>
+          <ul class="feature-list">
+            <li>1.0 Upload Resume</li>
+            <li>2.0 Extract Text</li>
+            <li>3.0 Parse Resume</li>
+            <li>4.0 Store Data</li>
+            <li>5.0 Display Results</li>
+            <li>6.0 Admin Management</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="card" style="margin-top: 18px">
+        <h3><i class='bx bx-list-check'></i> Supported Extraction Fields</h3>
+        <div class="pill-wrap">
+          <span class="pill">Full Name</span>
+          <span class="pill">Emails</span>
+          <span class="pill">Phones</span>
+          <span class="pill">Location</span>
+          <span class="pill">Skills</span>
+          <span class="pill">Education</span>
+          <span class="pill">Experience</span>
+          <span class="pill">Projects</span>
+          <span class="pill">Certifications</span>
+          <span class="pill">Confidence Scores</span>
+        </div>
+        <p class="footer-note">
+          This project is designed for academic use and can be extended with stronger NLP models and ATS scoring.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

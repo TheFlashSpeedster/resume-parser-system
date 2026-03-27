@@ -1,0 +1,36 @@
+{
+  "name": "resume-parser-system",
+  "version": "1.0.0",
+  "description": "Resume Parsing System using NLP, Node.js, Express, MongoDB, and Vanilla JS",
+  "main": "server/app.js",
+  "scripts": {
+    "start": "node server/app.js",
+    "dev": "nodemon server/app.js",
+    "seed:admin": "node server/utils/seedAdmin.js"
+  },
+  "keywords": [
+    "resume",
+    "parser",
+    "nlp",
+    "express",
+    "mongodb"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "helmet": "^8.1.0",
+    "mammoth": "^1.8.0",
+    "mongoose": "^8.6.2",
+    "multer": "^1.4.5-lts.1",
+    "pdf-parse": "^1.1.1",
+    "validator": "^13.12.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}

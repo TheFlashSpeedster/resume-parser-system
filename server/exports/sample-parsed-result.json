@@ -1,0 +1,43 @@
+{
+  "_id": "66f0f4f3d7399c9f7191f991",
+  "fileMetadata": {
+    "originalFilename": "john_doe_resume.pdf",
+    "storedFilename": "1727063900000_john_doe_resume.pdf",
+    "fileType": ".pdf",
+    "fileSize": 184210
+  },
+  "rawText": "John Doe\\nEmail: john.doe@example.com\\nPhone: +919876543210\\nLocation: Bangalore\\n...",
+  "parsedData": {
+    "name": "John Doe",
+    "emails": ["john.doe@example.com"],
+    "phones": ["+919876543210"],
+    "location": "Bangalore",
+    "skills": ["JavaScript", "Node.js", "Express", "MongoDB", "NLP"],
+    "education": [
+      "B.Tech in Computer Science, XYZ University, 2024"
+    ],
+    "experience": [
+      "Software Engineer Intern - ABC Technologies (2023 - 2024)"
+    ],
+    "projects": [
+      "Resume Parsing System using NLP and Node.js"
+    ],
+    "certifications": [
+      "NPTEL - Introduction to NLP"
+    ],
+    "confidenceScores": {
+      "name": 0.9,
+      "email": 0.8,
+      "phone": 0.75,
+      "skills": 0.5,
+      "education": 0.2,
+      "experience": 0.2
+    }
+  },
+  "duplicateFlag": false,
+  "duplicateReason": "",
+  "parsingStatus": "success",
+  "createdAt": "2026-03-28T04:10:00.000Z",
+  "updatedAt": "2026-03-28T04:10:00.000Z",
+  "updatedBy": ""
+}

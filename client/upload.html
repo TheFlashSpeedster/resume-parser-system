@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload Resume | Resume Parsing System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand">Resume Parsing System using NLP</div>
+        <nav class="nav-links">
+          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link active" href="/upload">Upload Resume</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page container">
+      <section class="grid grid-2">
+        <article class="card">
+          <h2><i class='bx bx-upload'></i> Upload Resume</h2>
+          <p class="muted">
+            Upload a single resume file. After upload, the system extracts text, parses key fields, stores
+            structured data, and redirects you to the parsed result page.
+          </p>
+
+          <form id="uploadForm">
+            <label for="resumeFile">Choose Resume (PDF, DOCX, DOC)</label>
+            <input id="resumeFile" type="file" accept=".pdf,.doc,.docx" required />
+
+            <div class="progress-wrap"><div id="progressBar" class="progress-bar"></div></div>
+            <p id="uploadStatus" class="muted"></p>
+
+            <div class="actions">
+              <button id="uploadBtn" class="btn" type="submit">Upload & Parse</button>
+              <a class="btn secondary" href="/">Back to Home</a>
+            </div>
+          </form>
+
+          <p class="footer-note">
+            Max file size: 5MB. DOC files may be rejected if extraction quality is unreliable.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3><i class='bx bx-right-arrow-alt'></i> What Happens Next?</h3>
+          <ul class="feature-list">
+            <li>File upload and validation</li>
+            <li>Raw text extraction from document</li>
+            <li>Section detection and field parsing</li>
+            <li>Duplicate check by email/phone</li>
+            <li>Database storage with confidence scores</li>
+            <li>Result display and JSON export</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <script src="/js/common.js"></script>
+    <script src="/js/upload.js"></script>
+  </body>
+</html>

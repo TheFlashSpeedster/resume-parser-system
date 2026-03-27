@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Detail | Resume Parsing System</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand">Resume Detail & Manual Edit</div>
+        <nav class="nav-links">
+          <a class="nav-link" href="/admin-dashboard">Dashboard</a>
+          <a class="nav-link" href="/admin-resumes">All Resumes</a>
+          <span id="adminIdentity" class="nav-link"></span>
+          <button id="logoutBtn" class="btn secondary" type="button">Logout</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page container">
+      <div id="detailState" class="card">Loading resume detail...</div>
+
+      <section id="detailContent" class="grid grid-2" style="display: none">
+        <article class="card">
+          <h2>Profile Summary</h2>
+          <div class="btn-row">
+            <span id="statusBadge" class="badge"></span>
+            <span id="duplicateBadge" class="badge"></span>
+          </div>
+          <p id="metaInfo" class="muted"></p>
+
+          <div class="btn-row">
+            <button id="exportJsonBtn" class="btn success" type="button">Export JSON</button>
+            <button id="deleteBtn" class="btn danger" type="button">Delete Resume</button>
+          </div>
+
+          <h3 style="margin-top: 16px">Extracted Raw Text</h3>
+          <div class="collapsible">
+            <button id="toggleRawBtn" type="button">Show / Hide Raw Text</button>
+            <div id="rawTextContent" class="content"></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h2>Edit Parsed Fields</h2>
+          <p class="muted">Manual edits override extracted values and store update metadata automatically.</p>
+
+          <form id="editForm">
+            <label for="name">Name</label>
+            <input id="name" type="text" />
+
+            <label for="emails">Emails (one per line)</label>
+            <textarea id="emails"></textarea>
+
+            <label for="phones">Phones (one per line)</label>
+            <textarea id="phones"></textarea>
+
+            <label for="location">Location</label>
+            <input id="location" type="text" />
+
+            <label for="skills">Skills (one per line)</label>
+            <textarea id="skills"></textarea>
+
+            <label for="education">Education (one per line)</label>
+            <textarea id="education"></textarea>
+
+            <label for="experience">Experience (one per line)</label>
+            <textarea id="experience"></textarea>
+
+            <label for="projects">Projects (one per line)</label>
+            <textarea id="projects"></textarea>
+
+            <label for="certifications">Certifications (one per line)</label>
+            <textarea id="certifications"></textarea>
+
+            <div class="actions">
+              <button id="saveBtn" class="btn" type="submit">Save Updates</button>
+              <a class="btn secondary" href="/admin-resumes">Back</a>
+            </div>
+          </form>
+        </article>
+      </section>
+    </main>
+
+    <script src="/js/common.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/admin-common.js"></script>
+    <script src="/js/admin-resume-detail.js"></script>
+  </body>
+</html>

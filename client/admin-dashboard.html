@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard | Resume Parsing System</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand">Admin Dashboard</div>
+        <nav class="nav-links">
+          <a class="nav-link active" href="/admin-dashboard">Dashboard</a>
+          <a class="nav-link" href="/admin-resumes">All Resumes</a>
+          <span id="adminIdentity" class="nav-link"></span>
+          <button id="logoutBtn" class="btn secondary" type="button">Logout</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page container">
+      <section class="stats-grid">
+        <article class="stat-box">
+          <div class="label">Total Uploads</div>
+          <div id="totalResumes" class="num">0</div>
+        </article>
+        <article class="stat-box">
+          <div class="label">Duplicates Flagged</div>
+          <div id="totalDuplicates" class="num">0</div>
+        </article>
+        <article class="stat-box">
+          <div class="label">Parsing Success</div>
+          <div id="successCount" class="num">0</div>
+        </article>
+        <article class="stat-box">
+          <div class="label">Parsing Failure</div>
+          <div id="failureCount" class="num">0</div>
+        </article>
+      </section>
+
+      <section class="grid grid-2" style="margin-top: 14px">
+        <article class="card">
+          <h3>Recent Uploads</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Status</th>
+                  <th>Duplicate</th>
+                  <th>Uploaded At</th>
+                </tr>
+              </thead>
+              <tbody id="recentUploadsBody"></tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Skill Summary</h3>
+          <div id="skillChart" class="chart-list"></div>
+        </article>
+      </section>
+
+      <section class="card" style="margin-top: 14px">
+        <h3>Recent System Logs</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Action</th>
+                <th>Actor</th>
+                <th>Message</th>
+                <th>Time</th>
+              </tr>
+            </thead>
+            <tbody id="recentLogsBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="/js/common.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/admin-common.js"></script>
+    <script src="/js/admin-dashboard.js"></script>
+  </body>
+</html>

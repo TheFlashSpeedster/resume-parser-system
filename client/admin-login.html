@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login | Resume Parsing System</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand">Resume Parsing System Admin</div>
+        <nav class="nav-links">
+          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link" href="/upload">Upload Resume</a>
+          <a class="nav-link active" href="/admin-login">Admin Login</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page container">
+      <section class="grid" style="max-width: 480px; margin: 0 auto">
+        <article class="card">
+          <h2>Admin Login</h2>
+          <p class="muted">Login to access dashboard, search/filter records, edit parsed data, and export reports.</p>
+
+          <form id="adminLoginForm">
+            <label for="username">Username</label>
+            <input id="username" name="username" type="text" autocomplete="username" required />
+
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" required />
+
+            <div class="actions">
+              <button id="loginBtn" class="btn" type="submit">Login</button>
+              <a class="btn secondary" href="/">Cancel</a>
+            </div>
+          </form>
+        </article>
+      </section>
+    </main>
+
+    <script src="/js/common.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/admin-login.js"></script>
+  </body>
+</html>

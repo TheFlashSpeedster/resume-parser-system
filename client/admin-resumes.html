@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Resumes | Resume Parsing System</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand">Resume Records</div>
+        <nav class="nav-links">
+          <a class="nav-link" href="/admin-dashboard">Dashboard</a>
+          <a class="nav-link active" href="/admin-resumes">All Resumes</a>
+          <span id="adminIdentity" class="nav-link"></span>
+          <button id="logoutBtn" class="btn secondary" type="button">Logout</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page container">
+      <article class="card">
+        <h2>Search & Filter</h2>
+        <form id="filterForm" class="grid grid-3">
+          <div>
+            <label for="searchInput">Keyword</label>
+            <input id="searchInput" type="text" placeholder="Name, email, phone, skill" />
+          </div>
+          <div>
+            <label for="skillFilter">Skill</label>
+            <input id="skillFilter" type="text" placeholder="e.g. JavaScript" />
+          </div>
+          <div>
+            <label for="educationFilter">Education</label>
+            <input id="educationFilter" type="text" placeholder="e.g. B.Tech" />
+          </div>
+          <div>
+            <label for="experienceFilter">Experience</label>
+            <input id="experienceFilter" type="text" placeholder="e.g. Intern" />
+          </div>
+          <div>
+            <label for="locationFilter">Location</label>
+            <input id="locationFilter" type="text" placeholder="e.g. Bangalore" />
+          </div>
+          <div>
+            <label for="statusFilter">Parsing Status</label>
+            <select id="statusFilter">
+              <option value="">All</option>
+              <option value="success">Success</option>
+              <option value="failure">Failure</option>
+            </select>
+          </div>
+          <div>
+            <label for="sortByFilter">Sort By</label>
+            <select id="sortByFilter">
+              <option value="date_desc">Newest First</option>
+              <option value="date_asc">Oldest First</option>
+              <option value="updated_desc">Recently Updated</option>
+              <option value="relevance">Relevance (with search)</option>
+            </select>
+          </div>
+          <div>
+            <label for="duplicateFilter">Duplicate</label>
+            <select id="duplicateFilter">
+              <option value="">All</option>
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+          </div>
+        </form>
+
+        <div class="btn-row">
+          <button class="btn" type="submit" form="filterForm">Apply Filters</button>
+          <button id="resetFiltersBtn" class="btn secondary" type="button">Reset</button>
+          <button id="exportCsvBtn" class="btn success" type="button">Export CSV</button>
+          <button id="exportJsonBtn" class="btn success" type="button">Export JSON</button>
+        </div>
+      </article>
+
+      <article class="card" style="margin-top: 14px">
+        <h3>Resume List</h3>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Top Skills</th>
+                <th>Location</th>
+                <th>Duplicate</th>
+                <th>Upload Date</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="resumeTableBody"></tbody>
+          </table>
+        </div>
+
+        <div class="pagination">
+          <button id="prevPageBtn" class="btn secondary" type="button">Previous</button>
+          <span id="pageInfo" class="muted">Page 1</span>
+          <button id="nextPageBtn" class="btn secondary" type="button">Next</button>
+        </div>
+      </article>
+    </main>
+
+    <script src="/js/common.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/admin-common.js"></script>
+    <script src="/js/admin-resumes.js"></script>
+  </body>
+</html>

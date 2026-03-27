@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parsed Result | Resume Parsing System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-inner">
+        <div class="brand">Resume Parsing System using NLP</div>
+        <nav class="nav-links">
+          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link" href="/upload">Upload Resume</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page container">
+      <div id="resultState" class="card">Loading parsed result...</div>
+
+      <section id="resultContent" style="display: none" class="grid">
+        <article class="card">
+          <h2><i class='bx bx-file-find'></i> Parsed Resume Result</h2>
+          <div class="btn-row">
+            <span id="parsingStatus" class="badge"></span>
+            <span id="duplicateStatus" class="badge"></span>
+          </div>
+          <p class="muted" id="duplicateReason"></p>
+
+          <div class="kv-grid" style="margin-top: 8px">
+            <div class="kv-item">
+              <div class="key">Name</div>
+              <div id="candidateName" class="value">-</div>
+            </div>
+            <div class="kv-item">
+              <div class="key">Email(s)</div>
+              <div id="candidateEmails" class="value">-</div>
+            </div>
+            <div class="kv-item">
+              <div class="key">Phone(s)</div>
+              <div id="candidatePhones" class="value">-</div>
+            </div>
+            <div class="kv-item">
+              <div class="key">Location</div>
+              <div id="candidateLocation" class="value">-</div>
+            </div>
+          </div>
+
+          <div class="btn-row">
+            <button id="downloadJsonBtn" class="btn success" type="button">Download JSON</button>
+            <a class="btn secondary" href="/upload">Upload Another Resume</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3><i class='bx bx-brain'></i> Skills</h3>
+          <div id="skillsWrap" class="pill-wrap"></div>
+        </article>
+
+        <section class="grid grid-2">
+          <article class="card">
+            <h3><i class='bx bx-book-open'></i> Education</h3>
+            <div id="educationWrap" class="pill-wrap"></div>
+          </article>
+          <article class="card">
+            <h3><i class='bx bx-briefcase'></i> Experience</h3>
+            <div id="experienceWrap" class="pill-wrap"></div>
+          </article>
+        </section>
+
+        <section class="grid grid-2">
+          <article class="card">
+            <h3><i class='bx bx-code-alt'></i> Projects</h3>
+            <div id="projectsWrap" class="pill-wrap"></div>
+          </article>
+          <article class="card">
+            <h3><i class='bx bx-certification'></i> Certifications</h3>
+            <div id="certificationsWrap" class="pill-wrap"></div>
+          </article>
+        </section>
+
+        <article class="card">
+          <h3><i class='bx bx-pie-chart-alt-2'></i> Confidence Scores</h3>
+          <div id="confidenceWrap" class="kv-grid"></div>
+        </article>
+
+        <article class="card">
+          <h3><i class='bx bx-text'></i> Extracted Raw Text</h3>
+          <div class="collapsible">
+            <button id="toggleRawBtn" type="button">Show / Hide Raw Text</button>
+            <div id="rawTextContent" class="content"></div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script src="/js/common.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/result.js"></script>
+  </body>
+</html>
