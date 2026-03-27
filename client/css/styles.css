@@ -107,7 +107,10 @@ a {
 }
 
 .page {
-  padding: 40px 0 60px;
+  padding: 60px 0 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .hero {
@@ -150,7 +153,7 @@ a {
 
 .grid {
   display: grid;
-  gap: 24px;
+  gap: 32px;
 }
 
 .grid-3 {

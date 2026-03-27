@@ -83,7 +83,7 @@ async function loadResumeResult() {
     const parsed = resume.parsedData || {};
 
     qs('#resultState').style.display = 'none';
-    qs('#resultContent').style.display = 'block';
+    qs('#resultContent').style.display = 'grid';
 
     qs('#candidateName').textContent = parsed.name || '-';
     qs('#candidateEmails').textContent = (parsed.emails || []).join(', ') || '-';
