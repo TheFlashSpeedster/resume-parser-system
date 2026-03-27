@@ -1,4 +1,42 @@
-function renderPillList(container, items) {
+function getSkillIcon(skillName) {
+  const s = String(skillName).toLowerCase();
+  const map = {
+    'html': 'devicon-html5-plain',
+    'css': 'devicon-css3-plain',
+    'javascript': 'devicon-javascript-plain',
+    'js': 'devicon-javascript-plain',
+    'react': 'devicon-react-original',
+    'node': 'devicon-nodejs-plain',
+    'python': 'devicon-python-plain',
+    'java': 'devicon-java-plain',
+    'c++': 'devicon-cplusplus-plain',
+    'c#': 'devicon-csharp-plain',
+    'php': 'devicon-php-plain',
+    'sql': 'devicon-mysql-plain',
+    'mongo': 'devicon-mongodb-plain',
+    'git': 'devicon-git-plain',
+    'docker': 'devicon-docker-plain',
+    'aws': 'devicon-amazonwebservices-original',
+    'linux': 'devicon-linux-plain',
+    'typescript': 'devicon-typescript-plain',
+    'ruby': 'devicon-ruby-plain',
+    'go': 'devicon-go-original',
+    'rust': 'devicon-rust-plain',
+    'vue': 'devicon-vuejs-plain',
+    'angular': 'devicon-angularjs-plain',
+    'spring': 'devicon-spring-plain',
+    'django': 'devicon-django-plain',
+    'flask': 'devicon-flask-original',
+    'kubernetes': 'devicon-kubernetes-plain'
+  };
+
+  for (let key in map) {
+    if (s.includes(key)) return `<i class="${map[key]} colored"></i>`;
+  }
+  return `<i class='bx bx-check-circle'></i>`;
+}
+
+function renderPillList(container, items, isSkill = false) {
   container.innerHTML = '';
   if (!items || !items.length) {
     container.innerHTML = '<div class="empty">No data extracted.</div>';
@@ -8,7 +46,11 @@ function renderPillList(container, items) {
   items.forEach((item) => {
     const span = document.createElement('span');
     span.className = 'pill';
-    span.textContent = item;
+    if (isSkill) {
+      span.innerHTML = `${getSkillIcon(item)} <span>${item}</span>`;
+    } else {
+      span.innerHTML = `<i class='bx bx-radio-circle-marked'></i> <span>${item}</span>`;
+    }
     container.appendChild(span);
   });
 }
@@ -58,11 +100,11 @@ async function loadResumeResult() {
 
     qs('#duplicateReason').textContent = resume.duplicateReason || 'Not applicable';
 
-    renderPillList(qs('#skillsWrap'), parsed.skills || []);
-    renderPillList(qs('#educationWrap'), parsed.education || []);
-    renderPillList(qs('#experienceWrap'), parsed.experience || []);
-    renderPillList(qs('#projectsWrap'), parsed.projects || []);
-    renderPillList(qs('#certificationsWrap'), parsed.certifications || []);
+    renderPillList(qs('#skillsWrap'), parsed.skills || [], true);
+    renderPillList(qs('#educationWrap'), parsed.education || [], false);
+    renderPillList(qs('#experienceWrap'), parsed.experience || [], false);
+    renderPillList(qs('#projectsWrap'), parsed.projects || [], false);
+    renderPillList(qs('#certificationsWrap'), parsed.certifications || [], false);
     renderConfidence(parsed.confidenceScores || {});
 
     qs('#rawTextContent').textContent = resume.rawText || 'No extracted raw text available.';
